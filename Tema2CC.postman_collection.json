@@ -1,0 +1,531 @@
+{
+	"info": {
+		"_postman_id": "83b1617a-266f-41c5-83aa-71b6bb4611cd",
+		"name": "Tema2CC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_all_resources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu"
+					]
+				},
+				"description": "cer toate resursele"
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_sub-resources",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/sub-meniuri",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"sub-meniuri"
+					]
+				},
+				"description": "cer toate subcategoriile de resurse"
+			},
+			"response": []
+		},
+		{
+			"name": "get_resource_by_id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu/8329123",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu",
+						"8329123"
+					]
+				},
+				"description": "cere o resursa dupa id"
+			},
+			"response": []
+		},
+		{
+			"name": "get_resource_by_id_404",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu/8329122",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu",
+						"8329122"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"continut\": [\r\n      \"suc cirese\",\r\n      \"suc merisoare\",\r\n      \"piure capsuni\",\r\n      \"sirop grenadine\"\r\n    ],\r\n    \"cantitate\": \"400 ml\",\r\n    \"denumire\": \"runic bomb\",\r\n    \"id_sub-meniu\": 12,\r\n    \"pret\": \"11 ron\"\r\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu/8754531",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu",
+						"8754531"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"continut\": [\r\n      \"suc cirese\",\r\n      \"suc merisoare\",\r\n      \"piure capsuni\",\r\n      \"sirop grenadine\"\r\n    ],\r\n    \"cantitate\": 1,\r\n    \"denumire\": \"runic bomb\",\r\n    \"id_sub-meniu\": 12,\r\n    \"pret\": \"10 ron\"\r\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu"
+					]
+				},
+				"description": "422"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"continut\": [\r\n      \"suc cirese\",\r\n      \"suc merisoare\",\r\n      \"piure capsuni\",\r\n      \"sirop grenadine\"\r\n    ],\r\n    \"cantitate\": 1,\r\n    \"denumire\": \"runic bomb\",\r\n    \"id_sub-meniu\": 12,\r\n    \"pret\": \"10 ron\r\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu"
+					]
+				},
+				"description": "415"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/sub-meniuri/14",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"denumire\": \"limonada2\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/sub-meniuri/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"sub-meniuri",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/sub-meniuri/143",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"denumire\": \"limonada2\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/sub-meniuri/143",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"sub-meniuri",
+						"143"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/sub-meniuri/14",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"denumire\": 1}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/sub-meniuri/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"sub-meniuri",
+						"14"
+					]
+				},
+				"description": "422"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/sub-meniuri/14",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"denumire\": 1"
+				},
+				"url": {
+					"raw": "http://localhost:8000/sub-meniuri/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"sub-meniuri",
+						"14"
+					]
+				},
+				"description": "415"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu/2863895",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_sub-meniu\": 132,\r\n    \"continut\": [\r\n      \"suc cirese\",\r\n      \"suc merisoare\",\r\n      \"piure capsuni\",\r\n      \"sirop grenadine\"\r\n    ],\r\n    \"cantitate\": \"400 ml\",\r\n    \"denumire\": \"runic bomb\",\r\n    \"pret\": \"11 ron\"\r\n   \r\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu/2863895",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu",
+						"2863895"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu/8754531",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu/8754531",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu",
+						"8754531"
+					]
+				},
+				"description": "409"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu/8754531",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu/8754531",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu",
+						"8754531"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu/8754531",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"continut\": [\r\n      \"suc cirese\",\r\n      \"suc merisoare\",\r\n      \"piure capsuni\",\r\n      \"sirop grenadine\"\r\n    ],\r\n    \"cantitate\": 1,\r\n    \"denumire\": \"runic bomb\",\r\n    \"id_sub-meniu\": 12,\r\n    \"pret\": \"11 ron\r\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu/8754531",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu",
+						"8754531"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_sub-meniu\": 132,\r\n    \"continut\": [\r\n      \"suc cirese\",\r\n      \"suc merisoare\",\r\n      \"piure capsuni\",\r\n      \"sirop grenadine\"\r\n    ],\r\n    \"cantitate\": \"400 ml\",\r\n    \"denumire\": \"runic bomb\",\r\n    \"pret\": \"11 ron\"\r\n   \r\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/meniu/burgeri",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"denumire\": \"burgeri\"}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/meniu/burgeri",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"meniu",
+						"burgeri"
+					]
+				},
+				"description": "not content sub-meniu gol"
+			},
+			"response": []
+		}
+	]
+}
